@@ -1,0 +1,15 @@
+gcs:
+  source_bucket: "my-geodata-source"
+  staging_bucket: "my-geodata-staging"
+  staging_prefix: "rextag/staging/"
+
+bigquery:
+  project: "my-gcp-project"
+  staging_dataset: "rextag_staging"
+  target_dataset: "rextag"
+
+sources:
+  - name: "parcels"
+    uri: "gs://my-geodata-source/parcels.gdb.zip"
+  - name: "zoning"
+    uri: "gs://my-geodata-source/zoning.gdb.zip"
