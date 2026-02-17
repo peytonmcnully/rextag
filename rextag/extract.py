@@ -1,5 +1,6 @@
 """Download and read geodatabase files from GCS."""
 
+import re
 import zipfile
 from pathlib import Path
 
@@ -61,6 +62,36 @@ def list_layers(gdb_path: Path) -> list[str]:
         List of layer name strings
     """
     return fiona.listlayers(gdb_path)
+
+
+def list_blobs(gcs_prefix: str, suffix: str | None = None) -> list[str]:
+    """List blob URIs under a GCS prefix."""
+    parts = gcs_prefix.replace("gs://", "").split("/", 1)
+    bucket_name = parts[0]
+    prefix = parts[1] if len(parts) > 1 else ""
+
+    client = storage.Client()
+    bucket = client.bucket(bucket_name)
+    blobs = bucket.list_blobs(prefix=prefix)
+
+    uris = []
+    for blob in blobs:
+        uri = f"gs://{bucket_name}/{blob.name}"
+        if suffix is None or blob.name.endswith(suffix):
+            uris.append(uri)
+    return uris
+
+
+def parse_data_drop(uri: str) -> str | None:
+    """Extract the data_drop value from a GCS URI containing data_drop=VALUE."""
+    match = re.search(r"data_drop=([^/]+)", uri)
+    return match.group(1) if match else None
+
+
+def has_geometry(fiona_schema: dict) -> bool:
+    """Check if a Fiona schema has a geometry column."""
+    geom_type = fiona_schema.get("geometry")
+    return geom_type is not None and str(geom_type) != "None"
 
 
 def extract_layer_to_jsonl(
