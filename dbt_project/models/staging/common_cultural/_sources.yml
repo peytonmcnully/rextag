@@ -1,0 +1,1157 @@
+version: 2
+sources:
+- name: common_cultural
+  description: Raw geodata from common_cultural.gdb
+  tables:
+  - name: UrbanAreas
+    description: 'Layer: UrbanAreas (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/UrbanAreas/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/UrbanAreas/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:90)'
+      config:
+        meta:
+          rename: null
+    - name: STATE
+      data_type: STRING
+      description: 'Source: STATE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: States
+    description: 'Layer: States (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/States/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/States/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: STATE
+      data_type: STRING
+      description: 'Source: STATE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: StateCensusTract
+    description: 'Layer: StateCensusTract (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/StateCensusTract/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/StateCensusTract/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: STATEFP
+      data_type: STRING
+      description: 'Source: STATEFP (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTYFP
+      data_type: STRING
+      description: 'Source: COUNTYFP (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: TRACTCE
+      data_type: STRING
+      description: 'Source: TRACTCE (str:6)'
+      config:
+        meta:
+          rename: null
+    - name: GEOID
+      data_type: STRING
+      description: 'Source: GEOID (str:11)'
+      config:
+        meta:
+          rename: null
+    - name: INT_NAME
+      data_type: STRING
+      description: 'Source: INT_NAME (str:7)'
+      config:
+        meta:
+          rename: null
+    - name: NAMELSAD
+      data_type: STRING
+      description: 'Source: NAMELSAD (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: FUNCSTAT
+      data_type: STRING
+      description: 'Source: FUNCSTAT (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ALAND
+      data_type: FLOAT64
+      description: 'Source: ALAND (float)'
+      config:
+        meta:
+          rename: null
+    - name: AWATER
+      data_type: FLOAT64
+      description: 'Source: AWATER (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: HistoricPoints
+    description: 'Layer: HistoricPoints (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/HistoricPoints/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/HistoricPoints/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: RESRCNM
+      data_type: STRING
+      description: 'Source: RESRCNM (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ADDRESS
+      data_type: STRING
+      description: 'Source: ADDRESS (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: IS_NHL
+      data_type: STRING
+      description: 'Source: IS_NHL (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: NHL_DATE
+      data_type: TIMESTAMP
+      description: 'Source: NHL_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: STATUS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: LIST_DATE
+      data_type: TIMESTAMP
+      description: 'Source: LIST_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: RESRC_TYPE
+      data_type: STRING
+      description: 'Source: RESRC_TYPE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: CONTRB_BULD
+      data_type: STRING
+      description: 'Source: CONTRB_BULD (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CONTRB_OBJ
+      data_type: STRING
+      description: 'Source: CONTRB_OBJ (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CONTRB_SITES
+      data_type: STRING
+      description: 'Source: CONTRB_SITES (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CONTRB_STRCT
+      data_type: STRING
+      description: 'Source: CONTRB_STRCT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: MTL_RES_NM
+      data_type: STRING
+      description: 'Source: MTL_RES_NM (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: CITY
+      data_type: STRING
+      description: 'Source: CITY (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Countries
+    description: 'Layer: Countries (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/Countries/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/Countries/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Counties
+    description: 'Layer: Counties (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/Counties/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/Counties/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: STATE
+      data_type: STRING
+      description: 'Source: STATE (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTY
+      data_type: STRING
+      description: 'Source: COUNTY (str:75)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: CongressionalDistricts
+    description: 'Layer: CongressionalDistricts (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/CongressionalDistricts/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/CongressionalDistricts/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: STATEFP
+      data_type: STRING
+      description: 'Source: STATEFP (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CD116FP
+      data_type: STRING
+      description: 'Source: CD116FP (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CDDIST_ID
+      data_type: STRING
+      description: 'Source: CDDIST_ID (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: NAMELSAD
+      data_type: STRING
+      description: 'Source: NAMELSAD (str:41)'
+      config:
+        meta:
+          rename: null
+    - name: CDSESSN
+      data_type: STRING
+      description: 'Source: CDSESSN (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: FUNCSTAT
+      data_type: STRING
+      description: 'Source: FUNCSTAT (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ALAND
+      data_type: FLOAT64
+      description: 'Source: ALAND (float)'
+      config:
+        meta:
+          rename: null
+    - name: AWATER
+      data_type: FLOAT64
+      description: 'Source: AWATER (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Cities
+    description: 'Layer: Cities (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/Cities/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/Cities/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: STATE
+      data_type: STRING
+      description: 'Source: STATE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: POPULATION
+      data_type: FLOAT64
+      description: 'Source: POPULATION (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: GulfFairways
+    description: 'Layer: GulfFairways (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/GulfFairways/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/GulfFairways/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Ports
+    description: 'Layer: Ports (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/Ports/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/Ports/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: HARBORSIZE
+      data_type: STRING
+      description: 'Source: HARBORSIZE (str:12)'
+      config:
+        meta:
+          rename: null
+    - name: HARBORTYPE
+      data_type: STRING
+      description: 'Source: HARBORTYPE (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SHELTER
+      data_type: STRING
+      description: 'Source: SHELTER (str:11)'
+      config:
+        meta:
+          rename: null
+    - name: ENTRY_TIDE
+      data_type: STRING
+      description: 'Source: ENTRY_TIDE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ENTRYSWELL
+      data_type: STRING
+      description: 'Source: ENTRYSWELL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ENTRY_ICE
+      data_type: STRING
+      description: 'Source: ENTRY_ICE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ENTRYOTHER
+      data_type: STRING
+      description: 'Source: ENTRYOTHER (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: OVERHD_LIM
+      data_type: STRING
+      description: 'Source: OVERHD_LIM (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CHAN_DEPTH
+      data_type: STRING
+      description: 'Source: CHAN_DEPTH (str:13)'
+      config:
+        meta:
+          rename: null
+    - name: ANCH_DEPTH
+      data_type: STRING
+      description: 'Source: ANCH_DEPTH (str:13)'
+      config:
+        meta:
+          rename: null
+    - name: CARGODEPTH
+      data_type: STRING
+      description: 'Source: CARGODEPTH (str:13)'
+      config:
+        meta:
+          rename: null
+    - name: OIL_DEPTH
+      data_type: STRING
+      description: 'Source: OIL_DEPTH (str:13)'
+      config:
+        meta:
+          rename: null
+    - name: TIDE_RANGE
+      data_type: STRING
+      description: 'Source: TIDE_RANGE (int16)'
+      config:
+        meta:
+          rename: null
+    - name: MAX_VESSEL
+      data_type: STRING
+      description: 'Source: MAX_VESSEL (str:26)'
+      config:
+        meta:
+          rename: null
+    - name: HOLDGROUND
+      data_type: STRING
+      description: 'Source: HOLDGROUND (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: TURN_BASIN
+      data_type: STRING
+      description: 'Source: TURN_BASIN (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: PORTOFENTR
+      data_type: STRING
+      description: 'Source: PORTOFENTR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: US_REP
+      data_type: STRING
+      description: 'Source: US_REP (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ETAMESSAGE
+      data_type: STRING
+      description: 'Source: ETAMESSAGE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: PILOT_REQD
+      data_type: STRING
+      description: 'Source: PILOT_REQD (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: PILOTAVAIL
+      data_type: STRING
+      description: 'Source: PILOTAVAIL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ASSIST
+      data_type: STRING
+      description: 'Source: LOC_ASSIST (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: PILOTADVSD
+      data_type: STRING
+      description: 'Source: PILOTADVSD (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: TUGSALVAGE
+      data_type: STRING
+      description: 'Source: TUGSALVAGE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: TUG_ASSIST
+      data_type: STRING
+      description: 'Source: TUG_ASSIST (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: PRATIQUE
+      data_type: STRING
+      description: 'Source: PRATIQUE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: SSCC_CERT
+      data_type: STRING
+      description: 'Source: SSCC_CERT (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: QUAR_OTHER
+      data_type: STRING
+      description: 'Source: QUAR_OTHER (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COMM_PHONE
+      data_type: STRING
+      description: 'Source: COMM_PHONE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COMM_FAX
+      data_type: STRING
+      description: 'Source: COMM_FAX (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COMM_RADIO
+      data_type: STRING
+      description: 'Source: COMM_RADIO (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COMM_VHF
+      data_type: STRING
+      description: 'Source: COMM_VHF (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COMM_AIR
+      data_type: STRING
+      description: 'Source: COMM_AIR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COMM_RAIL
+      data_type: STRING
+      description: 'Source: COMM_RAIL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CARGOWHARF
+      data_type: STRING
+      description: 'Source: CARGOWHARF (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CARGO_ANCH
+      data_type: STRING
+      description: 'Source: CARGO_ANCH (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CARGMDMOOR
+      data_type: STRING
+      description: 'Source: CARGMDMOOR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CARBCHMOOR
+      data_type: STRING
+      description: 'Source: CARBCHMOOR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CARICEMOOR
+      data_type: STRING
+      description: 'Source: CARICEMOOR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: MED_FACIL
+      data_type: STRING
+      description: 'Source: MED_FACIL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: GARBAGE
+      data_type: STRING
+      description: 'Source: GARBAGE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: DEGAUSS
+      data_type: STRING
+      description: 'Source: DEGAUSS (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: DRTYBALLST
+      data_type: STRING
+      description: 'Source: DRTYBALLST (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CRANEFIXED
+      data_type: STRING
+      description: 'Source: CRANEFIXED (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CRANEMOBIL
+      data_type: STRING
+      description: 'Source: CRANEMOBIL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CRANEFLOAT
+      data_type: STRING
+      description: 'Source: CRANEFLOAT (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: LIFT_100_
+      data_type: STRING
+      description: 'Source: LIFT_100_ (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: LIFT50_100
+      data_type: STRING
+      description: 'Source: LIFT50_100 (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: LIFT_25_49
+      data_type: STRING
+      description: 'Source: LIFT_25_49 (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: LIFT_0_24
+      data_type: STRING
+      description: 'Source: LIFT_0_24 (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: LONGSHORE
+      data_type: STRING
+      description: 'Source: LONGSHORE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ELECTRICAL
+      data_type: STRING
+      description: 'Source: ELECTRICAL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: SERV_STEAM
+      data_type: STRING
+      description: 'Source: SERV_STEAM (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: NAV_EQUIP
+      data_type: STRING
+      description: 'Source: NAV_EQUIP (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ELECREPAIR
+      data_type: STRING
+      description: 'Source: ELECREPAIR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: PROVISIONS
+      data_type: STRING
+      description: 'Source: PROVISIONS (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: WATER
+      data_type: STRING
+      description: 'Source: WATER (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: FUEL_OIL
+      data_type: STRING
+      description: 'Source: FUEL_OIL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: DIESEL
+      data_type: STRING
+      description: 'Source: DIESEL (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: DECKSUPPLY
+      data_type: STRING
+      description: 'Source: DECKSUPPLY (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: ENG_SUPPLY
+      data_type: STRING
+      description: 'Source: ENG_SUPPLY (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: REPAIRCODE
+      data_type: STRING
+      description: 'Source: REPAIRCODE (str:16)'
+      config:
+        meta:
+          rename: null
+    - name: DRYDOCK
+      data_type: STRING
+      description: 'Source: DRYDOCK (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: RAILWAY
+      data_type: STRING
+      description: 'Source: RAILWAY (str:18)'
+      config:
+        meta:
+          rename: null
+    - name: EXP_CRD
+      data_type: STRING
+      description: 'Source: EXP_CRD (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: EXP_OTH
+      data_type: STRING
+      description: 'Source: EXP_OTH (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: IMP_CRD
+      data_type: STRING
+      description: 'Source: IMP_CRD (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: IMP_OTH
+      data_type: STRING
+      description: 'Source: IMP_OTH (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Roads
+    description: 'Layer: Roads (MultiLineString)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/Roads/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/Roads/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiLineString)'
+      config:
+        meta:
+          rename: null
+    - name: STREETNAME
+      data_type: STRING
+      description: 'Source: STREETNAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE_DET
+      data_type: STRING
+      description: 'Source: TYPE_DET (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: PublicLands
+    description: 'Layer: PublicLands (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/common_cultural/PublicLands/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/common_cultural/PublicLands/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: ADMIN_ST
+      data_type: STRING
+      description: 'Source: ADMIN_ST (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ADMIN_UNIT_NAME
+      data_type: STRING
+      description: 'Source: ADMIN_UNIT_NAME (str:255)'
+      config:
+        meta:
+          rename: null
+    - name: ADMIN_UNIT_TYPE
+      data_type: STRING
+      description: 'Source: ADMIN_UNIT_TYPE (str:255)'
+      config:
+        meta:
+          rename: null
+    - name: ADMIN_DEPT
+      data_type: STRING
+      description: 'Source: ADMIN_DEPT (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: ADMIN_AGENCY
+      data_type: STRING
+      description: 'Source: ADMIN_AGENCY (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: HOLD_DEPT
+      data_type: STRING
+      description: 'Source: HOLD_DEPT (str:255)'
+      config:
+        meta:
+          rename: null
+    - name: HOLD_AGENCY
+      data_type: STRING
+      description: 'Source: HOLD_AGENCY (str:255)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING

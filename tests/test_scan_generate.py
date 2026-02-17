@@ -111,7 +111,7 @@ class TestGenerateSourcesYml:
         parsed = yaml.safe_load(result)
         columns = parsed["sources"][0]["tables"][0]["columns"]
         objectid_col = next(c for c in columns if c["name"] == "OBJECTID")
-        assert objectid_col["meta"]["rename"] is None
+        assert objectid_col["config"]["meta"]["rename"] is None
 
 
 class TestGenerateStagingSql:

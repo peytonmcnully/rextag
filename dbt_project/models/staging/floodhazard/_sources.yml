@@ -1,0 +1,74 @@
+version: 2
+sources:
+- name: floodhazard
+  description: Raw geodata from floodhazard.gdb
+  tables:
+  - name: FloodHazard
+    description: 'Layer: FloodHazard (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/floodhazard/FloodHazard/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/floodhazard/FloodHazard/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: AREA_SQMI
+      data_type: FLOAT64
+      description: 'Source: AREA_SQMI (float)'
+      config:
+        meta:
+          rename: null
+    - name: STUDY_TYP
+      data_type: STRING
+      description: 'Source: STUDY_TYP (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: FLD_ZONE
+      data_type: STRING
+      description: 'Source: FLD_ZONE (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: FLD_ZONE_RISK
+      data_type: STRING
+      description: 'Source: FLD_ZONE_RISK (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ZONE_SUBTY
+      data_type: STRING
+      description: 'Source: ZONE_SUBTY (str:75)'
+      config:
+        meta:
+          rename: null
+    - name: FLD_ZONE_DESC
+      data_type: STRING
+      description: 'Source: FLD_ZONE_DESC (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING

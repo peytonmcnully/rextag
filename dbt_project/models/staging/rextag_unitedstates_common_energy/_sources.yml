@@ -1,0 +1,542 @@
+version: 2
+sources:
+- name: rextag_unitedstates_common_energy
+  description: Raw geodata from rextag_unitedstates_common_energy.gdb
+  tables:
+  - name: OffshoreGroups
+    description: 'Layer: OffshoreGroups (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/OffshoreGroups/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/OffshoreGroups/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: MMS_REGION
+      data_type: STRING
+      description: 'Source: MMS_REGION (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: MMS_PLAN_A
+      data_type: STRING
+      description: 'Source: MMS_PLAN_A (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: AREA_CODE
+      data_type: STRING
+      description: 'Source: AREA_CODE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: GROUP_NAME
+      data_type: STRING
+      description: 'Source: GROUP_NAME (str:36)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ProducingAreas
+    description: 'Layer: ProducingAreas (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/ProducingAreas/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/ProducingAreas/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: COMMODITY
+      data_type: STRING
+      description: 'Source: COMMODITY (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: RefiningDistricts
+    description: 'Layer: RefiningDistricts (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/RefiningDistricts/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/RefiningDistricts/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: DISTRICTS
+      data_type: STRING
+      description: 'Source: DISTRICTS (str:38)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Fields
+    description: 'Layer: Fields (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/Fields/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/Fields/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ShalePlays
+    description: 'Layer: ShalePlays (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/ShalePlays/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/ShalePlays/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: PADDs
+    description: 'Layer: PADDs (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/PADDs/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/PADDs/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: PADD
+      data_type: STRING
+      description: 'Source: PADD (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Basins
+    description: 'Layer: Basins (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/Basins/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/Basins/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: OffshoreBlocks
+    description: 'Layer: OffshoreBlocks (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/OffshoreBlocks/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/OffshoreBlocks/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: AREA
+      data_type: FLOAT64
+      description: 'Source: AREA (float)'
+      config:
+        meta:
+          rename: null
+    - name: PERIMETER
+      data_type: FLOAT64
+      description: 'Source: PERIMETER (float)'
+      config:
+        meta:
+          rename: null
+    - name: BLOCKS_
+      data_type: STRING
+      description: 'Source: BLOCKS_ (int32)'
+      config:
+        meta:
+          rename: null
+    - name: BLOCKS_ID
+      data_type: STRING
+      description: 'Source: BLOCKS_ID (int32)'
+      config:
+        meta:
+          rename: null
+    - name: MMS_REGION
+      data_type: STRING
+      description: 'Source: MMS_REGION (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: MMS_PLAN_A
+      data_type: STRING
+      description: 'Source: MMS_PLAN_A (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: PROT_NUMBE
+      data_type: STRING
+      description: 'Source: PROT_NUMBE (str:7)'
+      config:
+        meta:
+          rename: null
+    - name: PROT_APRV_
+      data_type: STRING
+      description: 'Source: PROT_APRV_ (str:11)'
+      config:
+        meta:
+          rename: null
+    - name: BLOCK_NUMB
+      data_type: STRING
+      description: 'Source: BLOCK_NUMB (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: BLK_FED_AP
+      data_type: STRING
+      description: 'Source: BLK_FED_AP (str:11)'
+      config:
+        meta:
+          rename: null
+    - name: BLOCK_LAB
+      data_type: STRING
+      description: 'Source: BLOCK_LAB (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: AC_LAB
+      data_type: STRING
+      description: 'Source: AC_LAB (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: AREA_CODE
+      data_type: STRING
+      description: 'Source: AREA_CODE (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: OffshorePlatforms
+    description: 'Layer: OffshorePlatforms (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/OffshorePlatforms/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_common_energy/OffshorePlatforms/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: COMPLEX_ID
+      data_type: STRING
+      description: 'Source: COMPLEX_ID (int32)'
+      config:
+        meta:
+          rename: null
+    - name: STR_NUMBER
+      data_type: STRING
+      description: 'Source: STR_NUMBER (int16)'
+      config:
+        meta:
+          rename: null
+    - name: STR_NAME
+      data_type: STRING
+      description: 'Source: STR_NAME (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: INSTALL_DA
+      data_type: TIMESTAMP
+      description: 'Source: INSTALL_DA (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: REMOVAL_DA
+      data_type: TIMESTAMP
+      description: 'Source: REMOVAL_DA (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING

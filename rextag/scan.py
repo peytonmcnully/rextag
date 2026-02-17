@@ -106,7 +106,7 @@ def generate_sources_yml(
             }
             if col["source_type"] is not None:
                 col_def["description"] = f"Source: {col['name']} ({col['source_type']})"
-                col_def["meta"] = {"rename": None}
+                col_def["config"] = {"meta": {"rename": None}}
             columns.append(col_def)
 
         table_def = {

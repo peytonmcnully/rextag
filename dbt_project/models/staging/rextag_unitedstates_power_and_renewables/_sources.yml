@@ -1,0 +1,6485 @@
+version: 2
+sources:
+- name: rextag_unitedstates_power_and_renewables
+  description: Raw geodata from rextag_unitedstates_power_and_renewables.gdb
+  tables:
+  - name: Biomass
+    description: 'Layer: Biomass (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/Biomass/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/Biomass/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: AREA
+      data_type: FLOAT64
+      description: 'Source: AREA (float)'
+      config:
+        meta:
+          rename: null
+    - name: POP
+      data_type: FLOAT64
+      description: 'Source: POP (float)'
+      config:
+        meta:
+          rename: null
+    - name: FOREST
+      data_type: STRING
+      description: 'Source: FOREST (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PRIMMILL
+      data_type: STRING
+      description: 'Source: PRIMMILL (int32)'
+      config:
+        meta:
+          rename: null
+    - name: SECMILL
+      data_type: STRING
+      description: 'Source: SECMILL (int32)'
+      config:
+        meta:
+          rename: null
+    - name: URBANWOOD
+      data_type: STRING
+      description: 'Source: URBANWOOD (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CROPRES
+      data_type: FLOAT64
+      description: 'Source: CROPRES (float)'
+      config:
+        meta:
+          rename: null
+    - name: WWTF
+      data_type: FLOAT64
+      description: 'Source: WWTF (float)'
+      config:
+        meta:
+          rename: null
+    - name: LANDFILL
+      data_type: FLOAT64
+      description: 'Source: LANDFILL (float)'
+      config:
+        meta:
+          rename: null
+    - name: MANURE
+      data_type: FLOAT64
+      description: 'Source: MANURE (float)'
+      config:
+        meta:
+          rename: null
+    - name: SWG
+      data_type: FLOAT64
+      description: 'Source: SWG (float)'
+      config:
+        meta:
+          rename: null
+    - name: TOTAL
+      data_type: FLOAT64
+      description: 'Source: TOTAL (float)'
+      config:
+        meta:
+          rename: null
+    - name: TOTAL_SQKM
+      data_type: FLOAT64
+      description: 'Source: TOTAL_SQKM (float)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: NERCRegions
+    description: 'Layer: NERCRegions (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/NERCRegions/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/NERCRegions/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: WEBSITE
+      data_type: STRING
+      description: 'Source: WEBSITE (str:250)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: IndependentSystemOperators
+    description: 'Layer: IndependentSystemOperators (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/IndependentSystemOperators/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/IndependentSystemOperators/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: NAICS_CODE
+      data_type: STRING
+      description: 'Source: NAICS_CODE (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: NAICS_DESC
+      data_type: STRING
+      description: 'Source: NAICS_DESC (str:56)'
+      config:
+        meta:
+          rename: null
+    - name: WEBSITE
+      data_type: STRING
+      description: 'Source: WEBSITE (str:27)'
+      config:
+        meta:
+          rename: null
+    - name: PEAK_LOAD
+      data_type: FLOAT64
+      description: 'Source: PEAK_LOAD (float)'
+      config:
+        meta:
+          rename: null
+    - name: AVG_LOAD
+      data_type: FLOAT64
+      description: 'Source: AVG_LOAD (float)'
+      config:
+        meta:
+          rename: null
+    - name: YEAR
+      data_type: STRING
+      description: 'Source: YEAR (int16)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: EnergyCommunities_CoalClosure
+    description: 'Layer: EnergyCommunities_CoalClosure (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EnergyCommunities_CoalClosure/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EnergyCommunities_CoalClosure/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: COMMTYPE
+      data_type: STRING
+      description: 'Source: COMMTYPE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SYMBOL
+      data_type: STRING
+      description: 'Source: SYMBOL (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: TRACTSTATUS
+      data_type: STRING
+      description: 'Source: TRACTSTATUS (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ADJTOCLOSURE
+      data_type: STRING
+      description: 'Source: ADJTOCLOSURE (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: NEIGHBORQUAL
+      data_type: STRING
+      description: 'Source: NEIGHBORQUAL (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: GENERATORCLOSURE
+      data_type: STRING
+      description: 'Source: GENERATORCLOSURE (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: GENERATORQUAL
+      data_type: STRING
+      description: 'Source: GENERATORQUAL (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: MINECLOSURE
+      data_type: STRING
+      description: 'Source: MINECLOSURE (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: MINEQUAL
+      data_type: STRING
+      description: 'Source: MINEQUAL (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: RECORDADDED
+      data_type: TIMESTAMP
+      description: 'Source: RECORDADDED (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: DATEUPDATE
+      data_type: TIMESTAMP
+      description: 'Source: DATEUPDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: DATASETVERSION
+      data_type: FLOAT64
+      description: 'Source: DATASETVERSION (float)'
+      config:
+        meta:
+          rename: null
+    - name: AFFGEOIDTRACT
+      data_type: STRING
+      description: 'Source: AFFGEOIDTRACT (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: GEOIDTRACT
+      data_type: STRING
+      description: 'Source: GEOIDTRACT (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: GEOIDCOUNTY
+      data_type: STRING
+      description: 'Source: GEOIDCOUNTY (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: CENSUSTRACTNAME
+      data_type: STRING
+      description: 'Source: CENSUSTRACTNAME (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: FIPSTRACT
+      data_type: STRING
+      description: 'Source: FIPSTRACT (str:6)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: FIPSCOUNTY
+      data_type: STRING
+      description: 'Source: FIPSCOUNTY (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: FIPSSTATE
+      data_type: STRING
+      description: 'Source: FIPSSTATE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: GeothermalSites
+    description: 'Layer: GeothermalSites (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/GeothermalSites/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/GeothermalSites/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: PH
+      data_type: FLOAT64
+      description: 'Source: PH (float)'
+      config:
+        meta:
+          rename: null
+    - name: DEPTH_M
+      data_type: FLOAT64
+      description: 'Source: DEPTH_M (float)'
+      config:
+        meta:
+          rename: null
+    - name: DEPTH_FT
+      data_type: FLOAT64
+      description: 'Source: DEPTH_FT (float)'
+      config:
+        meta:
+          rename: null
+    - name: FLOW_LPM
+      data_type: FLOAT64
+      description: 'Source: FLOW_LPM (float)'
+      config:
+        meta:
+          rename: null
+    - name: FLOW_GPM
+      data_type: FLOAT64
+      description: 'Source: FLOW_GPM (float)'
+      config:
+        meta:
+          rename: null
+    - name: TDS_MGPL
+      data_type: FLOAT64
+      description: 'Source: TDS_MGPL (float)'
+      config:
+        meta:
+          rename: null
+    - name: RES_TEMP_C
+      data_type: FLOAT64
+      description: 'Source: RES_TEMP_C (float)'
+      config:
+        meta:
+          rename: null
+    - name: RES_TEMP_F
+      data_type: FLOAT64
+      description: 'Source: RES_TEMP_F (float)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: BalancingAuthorities
+    description: 'Layer: BalancingAuthorities (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/BalancingAuthorities/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/BalancingAuthorities/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: BA_CODE
+      data_type: STRING
+      description: 'Source: BA_CODE (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: YEAR
+      data_type: STRING
+      description: 'Source: YEAR (str:6)'
+      config:
+        meta:
+          rename: null
+    - name: PEAK_MONTH
+      data_type: STRING
+      description: 'Source: PEAK_MONTH (int32)'
+      config:
+        meta:
+          rename: null
+    - name: AVAIL_CAP
+      data_type: STRING
+      description: 'Source: AVAIL_CAP (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PLAN_OUT
+      data_type: STRING
+      description: 'Source: PLAN_OUT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: UNPLAN_OUT
+      data_type: STRING
+      description: 'Source: UNPLAN_OUT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: OTHER_OUT
+      data_type: STRING
+      description: 'Source: OTHER_OUT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: TOTAL_CAP
+      data_type: STRING
+      description: 'Source: TOTAL_CAP (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PEAK_LOAD
+      data_type: STRING
+      description: 'Source: PEAK_LOAD (int32)'
+      config:
+        meta:
+          rename: null
+    - name: MIN_LOAD
+      data_type: STRING
+      description: 'Source: MIN_LOAD (int32)'
+      config:
+        meta:
+          rename: null
+    - name: TIMEZONE
+      data_type: STRING
+      description: 'Source: TIMEZONE (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: REG_CODE
+      data_type: STRING
+      description: 'Source: REG_CODE (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: REG_NAME
+      data_type: STRING
+      description: 'Source: REG_NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRY
+      data_type: STRING
+      description: 'Source: COUNTRY (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: GENONLY
+      data_type: STRING
+      description: 'Source: GENONLY (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: DEM_BA_SUBREG
+      data_type: STRING
+      description: 'Source: DEM_BA_SUBREG (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: ACTIVE_BA
+      data_type: STRING
+      description: 'Source: ACTIVE_BA (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: RET_DATE
+      data_type: TIMESTAMP
+      description: 'Source: RET_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: WEBSITE
+      data_type: STRING
+      description: 'Source: WEBSITE (str:67)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: EnergyCommunities_MSA_NonMSA
+    description: 'Layer: EnergyCommunities_MSA_NonMSA (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EnergyCommunities_MSA_NonMSA/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EnergyCommunities_MSA_NonMSA/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: COMMTYPE
+      data_type: STRING
+      description: 'Source: COMMTYPE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: MSAAREAID
+      data_type: STRING
+      description: 'Source: MSAAREAID (int32)'
+      config:
+        meta:
+          rename: null
+    - name: MSA
+      data_type: STRING
+      description: 'Source: MSA (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: MSANMSALABEL
+      data_type: STRING
+      description: 'Source: MSANMSALABEL (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: MSAQUAL
+      data_type: STRING
+      description: 'Source: MSAQUAL (str:7)'
+      config:
+        meta:
+          rename: null
+    - name: FEELABEL
+      data_type: STRING
+      description: 'Source: FEELABEL (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: FEEQUALSTATUS
+      data_type: STRING
+      description: 'Source: FEEQUALSTATUS (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: FFEINDQUAL
+      data_type: STRING
+      description: 'Source: FFEINDQUAL (int32)'
+      config:
+        meta:
+          rename: null
+    - name: ECLABEL
+      data_type: STRING
+      description: 'Source: ECLABEL (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ECQUALSTATUS
+      data_type: STRING
+      description: 'Source: ECQUALSTATUS (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: ECINDQUAL
+      data_type: STRING
+      description: 'Source: ECINDQUAL (int32)'
+      config:
+        meta:
+          rename: null
+    - name: DATEUPDATE
+      data_type: TIMESTAMP
+      description: 'Source: DATEUPDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: DATASETVERSION
+      data_type: FLOAT64
+      description: 'Source: DATASETVERSION (float)'
+      config:
+        meta:
+          rename: null
+    - name: AFFGEOID
+      data_type: STRING
+      description: 'Source: AFFGEOID (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: FIPSCOUNTY
+      data_type: STRING
+      description: 'Source: FIPSCOUNTY (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: GEOIDCOUNTY
+      data_type: STRING
+      description: 'Source: GEOIDCOUNTY (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: FIPSSTATE
+      data_type: STRING
+      description: 'Source: FIPSSTATE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: RenewableAltFillingStations
+    description: 'Layer: RenewableAltFillingStations (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/RenewableAltFillingStations/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/RenewableAltFillingStations/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: FUELTYP_CD
+      data_type: STRING
+      description: 'Source: FUELTYP_CD (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: INTER
+      data_type: STRING
+      description: 'Source: INTER (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: PHONE
+      data_type: STRING
+      description: 'Source: PHONE (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: EXPECT_DT
+      data_type: TIMESTAMP
+      description: 'Source: EXPECT_DT (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: GRPACCESS
+      data_type: STRING
+      description: 'Source: GRPACCESS (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: ACCESSTIME
+      data_type: STRING
+      description: 'Source: ACCESSTIME (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: CARDS
+      data_type: STRING
+      description: 'Source: CARDS (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: BD_BLENDS
+      data_type: STRING
+      description: 'Source: BD_BLENDS (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: EVLVL1EVSE
+      data_type: STRING
+      description: 'Source: EVLVL1EVSE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: EVLVL2EVSE
+      data_type: STRING
+      description: 'Source: EVLVL2EVSE (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: EVDCFSTCNT
+      data_type: STRING
+      description: 'Source: EVDCFSTCNT (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: EVOTHER
+      data_type: STRING
+      description: 'Source: EVOTHER (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: EVNETWORK
+      data_type: STRING
+      description: 'Source: EVNETWORK (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: EVNTWRKWEB
+      data_type: STRING
+      description: 'Source: EVNTWRKWEB (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: DT_CONFIRM
+      data_type: TIMESTAMP
+      description: 'Source: DT_CONFIRM (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: HYSTATUSLINK
+      data_type: STRING
+      description: 'Source: HYSTATUSLINK (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: E85BLNDPUMP
+      data_type: STRING
+      description: 'Source: E85BLNDPUMP (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: EVCONTYPE
+      data_type: STRING
+      description: 'Source: EVCONTYPE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: E85OTHETHBLND
+      data_type: STRING
+      description: 'Source: E85OTHETHBLND (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: EVPRICE
+      data_type: STRING
+      description: 'Source: EVPRICE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: HYPRESSURE
+      data_type: STRING
+      description: 'Source: HYPRESSURE (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: HYSTANDARDS
+      data_type: STRING
+      description: 'Source: HYSTANDARDS (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: EVONSITERENEW
+      data_type: STRING
+      description: 'Source: EVONSITERENEW (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: EmissionSources
+    description: 'Layer: EmissionSources (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EmissionSources/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EmissionSources/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: FACILITY_ID
+      data_type: STRING
+      description: 'Source: FACILITY_ID (int32)'
+      config:
+        meta:
+          rename: null
+    - name: FRS_ID
+      data_type: STRING
+      description: 'Source: FRS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: FACILITYNAME
+      data_type: STRING
+      description: 'Source: FACILITYNAME (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ADDRESS
+      data_type: STRING
+      description: 'Source: ADDRESS (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: CITY
+      data_type: STRING
+      description: 'Source: CITY (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTYNAME
+      data_type: STRING
+      description: 'Source: COUNTYNAME (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: STATENAME
+      data_type: STRING
+      description: 'Source: STATENAME (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: COUNTRYNAME
+      data_type: STRING
+      description: 'Source: COUNTRYNAME (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ZIPCODE
+      data_type: STRING
+      description: 'Source: ZIPCODE (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: NAICS
+      data_type: STRING
+      description: 'Source: NAICS (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: INDUSTRYSUBPARTS
+      data_type: STRING
+      description: 'Source: INDUSTRYSUBPARTS (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: INDUSTRYSECTOR
+      data_type: STRING
+      description: 'Source: INDUSTRYSECTOR (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TOTDIRECTEMISSIONS
+      data_type: FLOAT64
+      description: 'Source: TOTDIRECTEMISSIONS (float)'
+      config:
+        meta:
+          rename: null
+    - name: CO2_NONBIOGENIC
+      data_type: FLOAT64
+      description: 'Source: CO2_NONBIOGENIC (float)'
+      config:
+        meta:
+          rename: null
+    - name: METHANE
+      data_type: FLOAT64
+      description: 'Source: METHANE (float)'
+      config:
+        meta:
+          rename: null
+    - name: NITROUSOXIDE
+      data_type: FLOAT64
+      description: 'Source: NITROUSOXIDE (float)'
+      config:
+        meta:
+          rename: null
+    - name: HFC
+      data_type: FLOAT64
+      description: 'Source: HFC (float)'
+      config:
+        meta:
+          rename: null
+    - name: PFC
+      data_type: FLOAT64
+      description: 'Source: PFC (float)'
+      config:
+        meta:
+          rename: null
+    - name: SF6
+      data_type: FLOAT64
+      description: 'Source: SF6 (float)'
+      config:
+        meta:
+          rename: null
+    - name: NF3
+      data_type: FLOAT64
+      description: 'Source: NF3 (float)'
+      config:
+        meta:
+          rename: null
+    - name: OTHERFULLYFLOURINATEDGHG
+      data_type: FLOAT64
+      description: 'Source: OTHERFULLYFLOURINATEDGHG (float)'
+      config:
+        meta:
+          rename: null
+    - name: HFE
+      data_type: FLOAT64
+      description: 'Source: HFE (float)'
+      config:
+        meta:
+          rename: null
+    - name: VERYSHORTLIVEDCOMP
+      data_type: FLOAT64
+      description: 'Source: VERYSHORTLIVEDCOMP (float)'
+      config:
+        meta:
+          rename: null
+    - name: OTHERGHGMETTONSCO2
+      data_type: FLOAT64
+      description: 'Source: OTHERGHGMETTONSCO2 (float)'
+      config:
+        meta:
+          rename: null
+    - name: CO2BIOGENIC
+      data_type: FLOAT64
+      description: 'Source: CO2BIOGENIC (float)'
+      config:
+        meta:
+          rename: null
+    - name: STATIONARYCOMBUSTION
+      data_type: FLOAT64
+      description: 'Source: STATIONARYCOMBUSTION (float)'
+      config:
+        meta:
+          rename: null
+    - name: ELECTRICITYGENERATION
+      data_type: FLOAT64
+      description: 'Source: ELECTRICITYGENERATION (float)'
+      config:
+        meta:
+          rename: null
+    - name: ADIPICACIDPROD
+      data_type: FLOAT64
+      description: 'Source: ADIPICACIDPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: ALUMINUMPROD
+      data_type: FLOAT64
+      description: 'Source: ALUMINUMPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: AMMONIAMANUFACT
+      data_type: FLOAT64
+      description: 'Source: AMMONIAMANUFACT (float)'
+      config:
+        meta:
+          rename: null
+    - name: CEMENTPROD
+      data_type: FLOAT64
+      description: 'Source: CEMENTPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: ELECTRONICSMANUFACT
+      data_type: FLOAT64
+      description: 'Source: ELECTRONICSMANUFACT (float)'
+      config:
+        meta:
+          rename: null
+    - name: FERROALLOYPROD
+      data_type: FLOAT64
+      description: 'Source: FERROALLOYPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: FLUORINATEDGHGPROD
+      data_type: FLOAT64
+      description: 'Source: FLUORINATEDGHGPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: GLASSPROD
+      data_type: FLOAT64
+      description: 'Source: GLASSPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: HCFCPRODFROMHFCDESTR
+      data_type: FLOAT64
+      description: 'Source: HCFCPRODFROMHFCDESTR (float)'
+      config:
+        meta:
+          rename: null
+    - name: HYDROGENPROD
+      data_type: FLOAT64
+      description: 'Source: HYDROGENPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: IRONSTEELPROD
+      data_type: FLOAT64
+      description: 'Source: IRONSTEELPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: LEADPROD
+      data_type: FLOAT64
+      description: 'Source: LEADPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: LIMEPROD
+      data_type: FLOAT64
+      description: 'Source: LIMEPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: MAGNESIUMPROD
+      data_type: FLOAT64
+      description: 'Source: MAGNESIUMPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: MISCUSEOFCARBONATES
+      data_type: FLOAT64
+      description: 'Source: MISCUSEOFCARBONATES (float)'
+      config:
+        meta:
+          rename: null
+    - name: NITRICACIDPROD
+      data_type: FLOAT64
+      description: 'Source: NITRICACIDPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: PETRNATGASOFFSHPROD
+      data_type: STRING
+      description: 'Source: PETRNATGASOFFSHPROD (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PETRNATGASOFFSHPROCESSING
+      data_type: STRING
+      description: 'Source: PETRNATGASOFFSHPROCESSING (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PETRNATGASOFFSHTCOMP
+      data_type: STRING
+      description: 'Source: PETRNATGASOFFSHTCOMP (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PETRNATGASOFFSHUNDERGSTO
+      data_type: STRING
+      description: 'Source: PETRNATGASOFFSHUNDERGSTO (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PETRNATGASOFFSHLNGSTORAGE
+      data_type: STRING
+      description: 'Source: PETRNATGASOFFSHLNGSTORAGE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PETRNATGASOFFSHLNGIMPEXP
+      data_type: STRING
+      description: 'Source: PETRNATGASOFFSHLNGIMPEXP (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PETROCHEMICALPROD
+      data_type: FLOAT64
+      description: 'Source: PETROCHEMICALPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: PETROLEUMREFINING
+      data_type: FLOAT64
+      description: 'Source: PETROLEUMREFINING (float)'
+      config:
+        meta:
+          rename: null
+    - name: PHOSPHORICACIDPROD
+      data_type: FLOAT64
+      description: 'Source: PHOSPHORICACIDPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: PULPPAPERMANUFACT
+      data_type: FLOAT64
+      description: 'Source: PULPPAPERMANUFACT (float)'
+      config:
+        meta:
+          rename: null
+    - name: SILICONCARBIDEPROD
+      data_type: FLOAT64
+      description: 'Source: SILICONCARBIDEPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: SODAASHMANUFACT
+      data_type: FLOAT64
+      description: 'Source: SODAASHMANUFACT (float)'
+      config:
+        meta:
+          rename: null
+    - name: TITANIUMDIOXIDEPROD
+      data_type: FLOAT64
+      description: 'Source: TITANIUMDIOXIDEPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: UNDERGROUNDCOALMINES
+      data_type: FLOAT64
+      description: 'Source: UNDERGROUNDCOALMINES (float)'
+      config:
+        meta:
+          rename: null
+    - name: ZINCPROD
+      data_type: FLOAT64
+      description: 'Source: ZINCPROD (float)'
+      config:
+        meta:
+          rename: null
+    - name: MUNICIPALLANDFILLS
+      data_type: FLOAT64
+      description: 'Source: MUNICIPALLANDFILLS (float)'
+      config:
+        meta:
+          rename: null
+    - name: INDUWASTEWATERTREAT
+      data_type: FLOAT64
+      description: 'Source: INDUWASTEWATERTREAT (float)'
+      config:
+        meta:
+          rename: null
+    - name: MANUFELECTRANSDISTEQUIP
+      data_type: FLOAT64
+      description: 'Source: MANUFELECTRANSDISTEQUIP (float)'
+      config:
+        meta:
+          rename: null
+    - name: INDUSTRIALWASTELANDFILLS
+      data_type: FLOAT64
+      description: 'Source: INDUSTRIALWASTELANDFILLS (float)'
+      config:
+        meta:
+          rename: null
+    - name: COCOLLECTEDONSITE
+      data_type: STRING
+      description: 'Source: COCOLLECTEDONSITE (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: COREPORTEDASEMISSIONS
+      data_type: STRING
+      description: 'Source: COREPORTEDASEMISSIONS (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: FACEMPLOYEMISSMONITOR
+      data_type: STRING
+      description: 'Source: FACEMPLOYEMISSMONITOR (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: WindTurbines
+    description: 'Layer: WindTurbines (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/WindTurbines/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/WindTurbines/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: DETERM
+      data_type: STRING
+      description: 'Source: DETERM (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SURVACCY
+      data_type: STRING
+      description: 'Source: SURVACCY (str:2)'
+      config:
+        meta:
+          rename: null
+    - name: MLTYPE
+      data_type: STRING
+      description: 'Source: MLTYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: MLTYPE2
+      data_type: STRING
+      description: 'Source: MLTYPE2 (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: NRAIRPRT
+      data_type: STRING
+      description: 'Source: NRAIRPRT (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: DIST2AIRPT
+      data_type: FLOAT64
+      description: 'Source: DIST2AIRPT (float)'
+      config:
+        meta:
+          rename: null
+    - name: DIR2AIRPT
+      data_type: FLOAT64
+      description: 'Source: DIR2AIRPT (float)'
+      config:
+        meta:
+          rename: null
+    - name: ONAIRPRT
+      data_type: STRING
+      description: 'Source: ONAIRPRT (str:1)'
+      config:
+        meta:
+          rename: null
+    - name: PROPDES
+      data_type: STRING
+      description: 'Source: PROPDES (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: LOCDES
+      data_type: STRING
+      description: 'Source: LOCDES (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: NOTICEOF
+      data_type: STRING
+      description: 'Source: NOTICEOF (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: DURATION
+      data_type: STRING
+      description: 'Source: DURATION (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: DURDAYS
+      data_type: STRING
+      description: 'Source: DURDAYS (int32)'
+      config:
+        meta:
+          rename: null
+    - name: DURMNTHS
+      data_type: STRING
+      description: 'Source: DURMNTHS (int32)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: AGLDET
+      data_type: FLOAT64
+      description: 'Source: AGLDET (float)'
+      config:
+        meta:
+          rename: null
+    - name: AGLDNE
+      data_type: FLOAT64
+      description: 'Source: AGLDNE (float)'
+      config:
+        meta:
+          rename: null
+    - name: AGLPROP
+      data_type: FLOAT64
+      description: 'Source: AGLPROP (float)'
+      config:
+        meta:
+          rename: null
+    - name: ELEV
+      data_type: FLOAT64
+      description: 'Source: ELEV (float)'
+      config:
+        meta:
+          rename: null
+    - name: AMSLDET
+      data_type: FLOAT64
+      description: 'Source: AMSLDET (float)'
+      config:
+        meta:
+          rename: null
+    - name: AMSLDNE
+      data_type: FLOAT64
+      description: 'Source: AMSLDNE (float)'
+      config:
+        meta:
+          rename: null
+    - name: AMSLPROP
+      data_type: FLOAT64
+      description: 'Source: AMSLPROP (float)'
+      config:
+        meta:
+          rename: null
+    - name: FWSREGION
+      data_type: STRING
+      description: 'Source: FWSREGION (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: STRCITY
+      data_type: STRING
+      description: 'Source: STRCITY (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: OilseedPlants
+    description: 'Layer: OilseedPlants (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/OilseedPlants/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/OilseedPlants/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: EthanolBiorefineries
+    description: 'Layer: EthanolBiorefineries (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EthanolBiorefineries/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EthanolBiorefineries/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: CAPACITY
+      data_type: STRING
+      description: 'Source: CAPACITY (int32)'
+      config:
+        meta:
+          rename: null
+    - name: THROUGHPUT
+      data_type: STRING
+      description: 'Source: THROUGHPUT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: STO_CAP
+      data_type: FLOAT64
+      description: 'Source: STO_CAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: OUT_MODE
+      data_type: STRING
+      description: 'Source: OUT_MODE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: HydrogenPlants
+    description: 'Layer: HydrogenPlants (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/HydrogenPlants/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/HydrogenPlants/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: PC_H_MMCFD
+      data_type: FLOAT64
+      description: 'Source: PC_H_MMCFD (float)'
+      config:
+        meta:
+          rename: null
+    - name: CAP_NM3_HR
+      data_type: FLOAT64
+      description: 'Source: CAP_NM3_HR (float)'
+      config:
+        meta:
+          rename: null
+    - name: CAP_KG_D
+      data_type: FLOAT64
+      description: 'Source: CAP_KG_D (float)'
+      config:
+        meta:
+          rename: null
+    - name: FUELTYPE
+      data_type: STRING
+      description: 'Source: FUELTYPE (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: H2_SOURCE
+      data_type: STRING
+      description: 'Source: H2_SOURCE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: PRODUCT
+      data_type: STRING
+      description: 'Source: PRODUCT (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: CarbonCaptureStorage
+    description: 'Layer: CarbonCaptureStorage (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/CarbonCaptureStorage/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/CarbonCaptureStorage/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CAP_MIN
+      data_type: FLOAT64
+      description: 'Source: CAP_MIN (float)'
+      config:
+        meta:
+          rename: null
+    - name: CAP_MAX
+      data_type: FLOAT64
+      description: 'Source: CAP_MAX (float)'
+      config:
+        meta:
+          rename: null
+    - name: STORTYPE
+      data_type: STRING
+      description: 'Source: STORTYPE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: INDSTFEED
+      data_type: STRING
+      description: 'Source: INDSTFEED (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: CAPTURETYPE
+      data_type: STRING
+      description: 'Source: CAPTURETYPE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: CAPSOURCE
+      data_type: STRING
+      description: 'Source: CAPSOURCE (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: CAPMETHOD
+      data_type: STRING
+      description: 'Source: CAPMETHOD (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: TRANSPTYPE
+      data_type: STRING
+      description: 'Source: TRANSPTYPE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: BiodieselPlants
+    description: 'Layer: BiodieselPlants (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/BiodieselPlants/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/BiodieselPlants/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: CAPACITY
+      data_type: FLOAT64
+      description: 'Source: CAPACITY (float)'
+      config:
+        meta:
+          rename: null
+    - name: FEEDSTOCK
+      data_type: STRING
+      description: 'Source: FEEDSTOCK (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: RFS2
+      data_type: STRING
+      description: 'Source: RFS2 (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: BQ
+      data_type: STRING
+      description: 'Source: BQ (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: Landfills
+    description: 'Layer: Landfills (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/Landfills/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/Landfills/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_TYPE
+      data_type: STRING
+      description: 'Source: OWNER_TYPE (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: PRJ_POTE
+      data_type: STRING
+      description: 'Source: PRJ_POTE (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: P_SHUTDOWN
+      data_type: TIMESTAMP
+      description: 'Source: P_SHUTDOWN (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: LF_STATUS
+      data_type: STRING
+      description: 'Source: LF_STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: YR_OPEN
+      data_type: STRING
+      description: 'Source: YR_OPEN (int32)'
+      config:
+        meta:
+          rename: null
+    - name: YR_CLOSE
+      data_type: STRING
+      description: 'Source: YR_CLOSE (int32)'
+      config:
+        meta:
+          rename: null
+    - name: WASTE_TON
+      data_type: FLOAT64
+      description: 'Source: WASTE_TON (float)'
+      config:
+        meta:
+          rename: null
+    - name: WASTE_YR
+      data_type: STRING
+      description: 'Source: WASTE_YR (int32)'
+      config:
+        meta:
+          rename: null
+    - name: LFG_SYSTM
+      data_type: STRING
+      description: 'Source: LFG_SYSTM (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LFGCOLLECT
+      data_type: FLOAT64
+      description: 'Source: LFGCOLLECT (float)'
+      config:
+        meta:
+          rename: null
+    - name: LFG_FLARED
+      data_type: FLOAT64
+      description: 'Source: LFG_FLARED (float)'
+      config:
+        meta:
+          rename: null
+    - name: LFG_P_TYPE
+      data_type: STRING
+      description: 'Source: LFG_P_TYPE (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: RNG_DELVRY
+      data_type: STRING
+      description: 'Source: RNG_DELVRY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: ACT_MW_GEN
+      data_type: FLOAT64
+      description: 'Source: ACT_MW_GEN (float)'
+      config:
+        meta:
+          rename: null
+    - name: RT_MW_CAP
+      data_type: FLOAT64
+      description: 'Source: RT_MW_CAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: LFP_FLOW
+      data_type: FLOAT64
+      description: 'Source: LFP_FLOW (float)'
+      config:
+        meta:
+          rename: null
+    - name: DIR_EM_RED
+      data_type: FLOAT64
+      description: 'Source: DIR_EM_RED (float)'
+      config:
+        meta:
+          rename: null
+    - name: AVD_EM_RED
+      data_type: FLOAT64
+      description: 'Source: AVD_EM_RED (float)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: OtherRNGPlants
+    description: 'Layer: OtherRNGPlants (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/OtherRNGPlants/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/OtherRNGPlants/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: REC_UTILITY
+      data_type: STRING
+      description: 'Source: REC_UTILITY (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: FEEDSTOCK
+      data_type: STRING
+      description: 'Source: FEEDSTOCK (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: BIOGAS_GEN
+      data_type: FLOAT64
+      description: 'Source: BIOGAS_GEN (float)'
+      config:
+        meta:
+          rename: null
+    - name: ELEC_GEN
+      data_type: FLOAT64
+      description: 'Source: ELEC_GEN (float)'
+      config:
+        meta:
+          rename: null
+    - name: TOT_EM_RED
+      data_type: FLOAT64
+      description: 'Source: TOT_EM_RED (float)'
+      config:
+        meta:
+          rename: null
+    - name: USDA_FUND
+      data_type: STRING
+      description: 'Source: USDA_FUND (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: PIPE_INJCT
+      data_type: STRING
+      description: 'Source: PIPE_INJCT (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: ENDUSE
+      data_type: STRING
+      description: 'Source: ENDUSE (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: DIGST_TYPE
+      data_type: STRING
+      description: 'Source: DIGST_TYPE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: CO_DIGEST
+      data_type: STRING
+      description: 'Source: CO_DIGEST (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: EnergyStorage
+    description: 'Layer: EnergyStorage (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EnergyStorage/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/EnergyStorage/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITY_NM
+      data_type: STRING
+      description: 'Source: UTILITY_NM (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: SECTORNAME
+      data_type: STRING
+      description: 'Source: SECTORNAME (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: EXST_NMPLT
+      data_type: FLOAT64
+      description: 'Source: EXST_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: PROP_NMPLT
+      data_type: FLOAT64
+      description: 'Source: PROP_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: EXPR_NMPLT
+      data_type: FLOAT64
+      description: 'Source: EXPR_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: RETIPNMPLT
+      data_type: FLOAT64
+      description: 'Source: RETIPNMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: DURATION
+      data_type: FLOAT64
+      description: 'Source: DURATION (float)'
+      config:
+        meta:
+          rename: null
+    - name: SUMMER_CAP
+      data_type: FLOAT64
+      description: 'Source: SUMMER_CAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: WINTER_CAP
+      data_type: FLOAT64
+      description: 'Source: WINTER_CAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: NMPLT_ENERGY_CAP
+      data_type: FLOAT64
+      description: 'Source: NMPLT_ENERGY_CAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: MAX_CHRG_RT
+      data_type: FLOAT64
+      description: 'Source: MAX_CHRG_RT (float)'
+      config:
+        meta:
+          rename: null
+    - name: MAX_DISCHRG_RT
+      data_type: FLOAT64
+      description: 'Source: MAX_DISCHRG_RT (float)'
+      config:
+        meta:
+          rename: null
+    - name: NMPLT_PWR_RT
+      data_type: FLOAT64
+      description: 'Source: NMPLT_PWR_RT (float)'
+      config:
+        meta:
+          rename: null
+    - name: PRIMEMOVER
+      data_type: STRING
+      description: 'Source: PRIMEMOVER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRMOVPROP
+      data_type: STRING
+      description: 'Source: PRMOVPROP (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRMOVRRET
+      data_type: STRING
+      description: 'Source: PRMOVRRET (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCE
+      data_type: STRING
+      description: 'Source: ENERGYSOURCE (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCEPROP
+      data_type: STRING
+      description: 'Source: ENERGYSOURCEPROP (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCERET
+      data_type: STRING
+      description: 'Source: ENERGYSOURCERET (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STORAGE_TECH
+      data_type: STRING
+      description: 'Source: STORAGE_TECH (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STORAGE_TYPE
+      data_type: STRING
+      description: 'Source: STORAGE_TYPE (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ARBITRAGE
+      data_type: STRING
+      description: 'Source: ARBITRAGE (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: FREQ_REG
+      data_type: STRING
+      description: 'Source: FREQ_REG (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: LOAD_FOL
+      data_type: STRING
+      description: 'Source: LOAD_FOL (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: RAMP_SPIN_RES
+      data_type: STRING
+      description: 'Source: RAMP_SPIN_RES (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: COLOC_RENEW_FIRM
+      data_type: STRING
+      description: 'Source: COLOC_RENEW_FIRM (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DIST_DEFER
+      data_type: STRING
+      description: 'Source: TRANS_DIST_DEFER (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: SYS_PEAK_SHAV
+      data_type: STRING
+      description: 'Source: SYS_PEAK_SHAV (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: LOAD_MANAGE
+      data_type: STRING
+      description: 'Source: LOAD_MANAGE (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: VLT_RCT_POWRSUP
+      data_type: STRING
+      description: 'Source: VLT_RCT_POWRSUP (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: BACK_POW
+      data_type: STRING
+      description: 'Source: BACK_POW (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: EXCE_WND_SOL_GEN
+      data_type: STRING
+      description: 'Source: EXCE_WND_SOL_GEN (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: PLANTID
+      data_type: STRING
+      description: 'Source: PLANTID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: GEN_ID
+      data_type: STRING
+      description: 'Source: GEN_ID (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricServiceTerritories
+    description: 'Layer: ElectricServiceTerritories (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricServiceTerritories/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricServiceTerritories/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: PowerGeneration
+    description: 'Layer: PowerGeneration (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/PowerGeneration/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/PowerGeneration/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITY_NM
+      data_type: STRING
+      description: 'Source: UTILITY_NM (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: EXST_NMPLT
+      data_type: FLOAT64
+      description: 'Source: EXST_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: PROP_NMPLT
+      data_type: FLOAT64
+      description: 'Source: PROP_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: EXPR_NMPLT
+      data_type: FLOAT64
+      description: 'Source: EXPR_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: RETIPNMPLT
+      data_type: FLOAT64
+      description: 'Source: RETIPNMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: PRIM_PURP
+      data_type: FLOAT64
+      description: 'Source: PRIM_PURP (float)'
+      config:
+        meta:
+          rename: null
+    - name: TITLE
+      data_type: STRING
+      description: 'Source: TITLE (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: NM_WTR_SRC
+      data_type: STRING
+      description: 'Source: NM_WTR_SRC (str:32)'
+      config:
+        meta:
+          rename: null
+    - name: REG_STATUS
+      data_type: STRING
+      description: 'Source: REG_STATUS (str:15)'
+      config:
+        meta:
+          rename: null
+    - name: FERC_COGEN
+      data_type: STRING
+      description: 'Source: FERC_COGEN (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: SECTORNAME
+      data_type: STRING
+      description: 'Source: SECTORNAME (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: RENEWENRGY
+      data_type: STRING
+      description: 'Source: RENEWENRGY (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: PRIMEMOVER
+      data_type: STRING
+      description: 'Source: PRIMEMOVER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRMOVRRET
+      data_type: STRING
+      description: 'Source: PRMOVRRET (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRMOVPROP
+      data_type: STRING
+      description: 'Source: PRMOVPROP (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCE
+      data_type: STRING
+      description: 'Source: ENERGYSOURCE (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCEPROP
+      data_type: STRING
+      description: 'Source: ENERGYSOURCEPROP (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCERET
+      data_type: STRING
+      description: 'Source: ENERGYSOURCERET (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: OPTURBINE
+      data_type: STRING
+      description: 'Source: OPTURBINE (int16)'
+      config:
+        meta:
+          rename: null
+    - name: UDTURBINE
+      data_type: STRING
+      description: 'Source: UDTURBINE (int16)'
+      config:
+        meta:
+          rename: null
+    - name: TRANSCO
+      data_type: STRING
+      description: 'Source: TRANSCO (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: GRIDVOLT
+      data_type: FLOAT64
+      description: 'Source: GRIDVOLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: GASLDC
+      data_type: STRING
+      description: 'Source: GASLDC (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PLNAME
+      data_type: STRING
+      description: 'Source: PLNAME (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: PLANTID
+      data_type: STRING
+      description: 'Source: PLANTID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: PowerPoles
+    description: 'Layer: PowerPoles (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/PowerPoles/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/PowerPoles/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: KV
+      data_type: FLOAT64
+      description: 'Source: KV (float)'
+      config:
+        meta:
+          rename: null
+    - name: STRHEIGHT
+      data_type: FLOAT64
+      description: 'Source: STRHEIGHT (float)'
+      config:
+        meta:
+          rename: null
+    - name: DIAMETER
+      data_type: FLOAT64
+      description: 'Source: DIAMETER (float)'
+      config:
+        meta:
+          rename: null
+    - name: CLASS
+      data_type: STRING
+      description: 'Source: CLASS (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: POLEUSE
+      data_type: STRING
+      description: 'Source: POLEUSE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PHASENUM
+      data_type: STRING
+      description: 'Source: PHASENUM (int16)'
+      config:
+        meta:
+          rename: null
+    - name: MATERIAL
+      data_type: STRING
+      description: 'Source: MATERIAL (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: INSTALLYR
+      data_type: STRING
+      description: 'Source: INSTALLYR (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: KV_CONF
+      data_type: STRING
+      description: 'Source: KV_CONF (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: SolarInstallationFootprints
+    description: 'Layer: SolarInstallationFootprints (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/SolarInstallationFootprints/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/SolarInstallationFootprints/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: SOLAR_NAME
+      data_type: STRING
+      description: 'Source: SOLAR_NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITY_NM
+      data_type: STRING
+      description: 'Source: UTILITY_NM (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: EXST_NMPLT
+      data_type: FLOAT64
+      description: 'Source: EXST_NMPLT (float)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: PLANTID
+      data_type: STRING
+      description: 'Source: PLANTID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SOLAR_LOC_ID
+      data_type: STRING
+      description: 'Source: SOLAR_LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: SQMILE
+      data_type: FLOAT64
+      description: 'Source: SQMILE (float)'
+      config:
+        meta:
+          rename: null
+    - name: ACREAGE
+      data_type: FLOAT64
+      description: 'Source: ACREAGE (float)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: HydrogenPipelines
+    description: 'Layer: HydrogenPipelines (MultiLineString)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/HydrogenPipelines/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/HydrogenPipelines/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiLineString)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: NAMECOMMON
+      data_type: STRING
+      description: 'Source: NAMECOMMON (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SYS_NAME
+      data_type: STRING
+      description: 'Source: SYS_NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUBSYS_NM
+      data_type: STRING
+      description: 'Source: SUBSYS_NM (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: DIAMETER
+      data_type: STRING
+      description: 'Source: DIAMETER (int16)'
+      config:
+        meta:
+          rename: null
+    - name: TRANSCAP
+      data_type: FLOAT64
+      description: 'Source: TRANSCAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: COMMODITY
+      data_type: STRING
+      description: 'Source: COMMODITY (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: CMDTY_DESC
+      data_type: STRING
+      description: 'Source: CMDTY_DESC (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: INTERSTATE
+      data_type: STRING
+      description: 'Source: INTERSTATE (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: RATE_ZONE
+      data_type: STRING
+      description: 'Source: RATE_ZONE (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: FERC
+      data_type: STRING
+      description: 'Source: FERC (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: FLOW_DIR
+      data_type: STRING
+      description: 'Source: FLOW_DIR (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: INSTALL_YR
+      data_type: STRING
+      description: 'Source: INSTALL_YR (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SYSTEM_ID
+      data_type: STRING
+      description: 'Source: SYSTEM_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SEG_ID
+      data_type: STRING
+      description: 'Source: SEG_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBSEG_ID
+      data_type: STRING
+      description: 'Source: SUBSEG_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: MILES
+      data_type: FLOAT64
+      description: 'Source: MILES (float)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricTransmission
+    description: 'Layer: ElectricTransmission (MultiLineString)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricTransmission/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricTransmission/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiLineString)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: OH_UG
+      data_type: STRING
+      description: 'Source: OH_UG (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: KV
+      data_type: FLOAT64
+      description: 'Source: KV (float)'
+      config:
+        meta:
+          rename: null
+    - name: CURRENT
+      data_type: STRING
+      description: 'Source: CURRENT (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: PHASE
+      data_type: STRING
+      description: 'Source: PHASE (int16)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: MILES
+      data_type: FLOAT64
+      description: 'Source: MILES (float)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: KV_CONF
+      data_type: STRING
+      description: 'Source: KV_CONF (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: CO2Pipelines
+    description: 'Layer: CO2Pipelines (MultiLineString)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/CO2Pipelines/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/CO2Pipelines/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiLineString)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: NAMECOMMON
+      data_type: STRING
+      description: 'Source: NAMECOMMON (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SYS_NAME
+      data_type: STRING
+      description: 'Source: SYS_NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUBSYS_NM
+      data_type: STRING
+      description: 'Source: SUBSYS_NM (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: DIAMETER
+      data_type: STRING
+      description: 'Source: DIAMETER (int16)'
+      config:
+        meta:
+          rename: null
+    - name: TRANSCAP
+      data_type: FLOAT64
+      description: 'Source: TRANSCAP (float)'
+      config:
+        meta:
+          rename: null
+    - name: COMMODITY
+      data_type: STRING
+      description: 'Source: COMMODITY (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: CMDTY_DESC
+      data_type: STRING
+      description: 'Source: CMDTY_DESC (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: INTERSTATE
+      data_type: STRING
+      description: 'Source: INTERSTATE (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: RATE_ZONE
+      data_type: STRING
+      description: 'Source: RATE_ZONE (str:30)'
+      config:
+        meta:
+          rename: null
+    - name: FERC
+      data_type: STRING
+      description: 'Source: FERC (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: FLOW_DIR
+      data_type: STRING
+      description: 'Source: FLOW_DIR (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: INSTALL_YR
+      data_type: STRING
+      description: 'Source: INSTALL_YR (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SYSTEM_ID
+      data_type: STRING
+      description: 'Source: SYSTEM_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SEG_ID
+      data_type: STRING
+      description: 'Source: SEG_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBSEG_ID
+      data_type: STRING
+      description: 'Source: SUBSEG_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: MILES
+      data_type: FLOAT64
+      description: 'Source: MILES (float)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricTaps
+    description: 'Layer: ElectricTaps (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricTaps/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricTaps/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: KV_MAX
+      data_type: STRING
+      description: 'Source: KV_MAX (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CIRCUITS
+      data_type: STRING
+      description: 'Source: CIRCUITS (int32)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricPricingZones
+    description: 'Layer: ElectricPricingZones (MultiPolygon)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricPricingZones/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricPricingZones/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (MultiPolygon)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Length
+      data_type: FLOAT64
+      description: 'Source: Shape_Length (float)'
+      config:
+        meta:
+          rename: null
+    - name: Shape_Area
+      data_type: FLOAT64
+      description: 'Source: Shape_Area (float)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricGenerators
+    description: 'Layer: ElectricGenerators (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricGenerators/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricGenerators/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: GENERATORNAME
+      data_type: STRING
+      description: 'Source: GENERATORNAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: GENID
+      data_type: STRING
+      description: 'Source: GENID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: UNITCODE
+      data_type: STRING
+      description: 'Source: UNITCODE (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: EXST_NMPLT
+      data_type: STRING
+      description: 'Source: EXST_NMPLT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PROP_NMPLT
+      data_type: STRING
+      description: 'Source: PROP_NMPLT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: RETIPNMPLT
+      data_type: STRING
+      description: 'Source: RETIPNMPLT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PWRFCTRNMPLT
+      data_type: STRING
+      description: 'Source: PWRFCTRNMPLT (int32)'
+      config:
+        meta:
+          rename: null
+    - name: MINLOAD_CAP
+      data_type: STRING
+      description: 'Source: MINLOAD_CAP (int32)'
+      config:
+        meta:
+          rename: null
+    - name: SUMMER_CAP
+      data_type: STRING
+      description: 'Source: SUMMER_CAP (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PROPNETSUMUPRATE
+      data_type: STRING
+      description: 'Source: PROPNETSUMUPRATE (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PROPNETSUMDERATE
+      data_type: STRING
+      description: 'Source: PROPNETSUMDERATE (int32)'
+      config:
+        meta:
+          rename: null
+    - name: WINTER_CAP
+      data_type: STRING
+      description: 'Source: WINTER_CAP (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PROPNETWINTUPRATE
+      data_type: STRING
+      description: 'Source: PROPNETWINTUPRATE (int32)'
+      config:
+        meta:
+          rename: null
+    - name: PROPNETWINTDERATE
+      data_type: STRING
+      description: 'Source: PROPNETWINTDERATE (int32)'
+      config:
+        meta:
+          rename: null
+    - name: SECTORNAME
+      data_type: STRING
+      description: 'Source: SECTORNAME (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITY_NM
+      data_type: STRING
+      description: 'Source: UTILITY_NM (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: RENEWENRGY
+      data_type: STRING
+      description: 'Source: RENEWENRGY (str:3)'
+      config:
+        meta:
+          rename: null
+    - name: TECH
+      data_type: STRING
+      description: 'Source: TECH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: STARTUPSOURCE
+      data_type: STRING
+      description: 'Source: STARTUPSOURCE (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRIMEMOVER
+      data_type: STRING
+      description: 'Source: PRIMEMOVER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRMOVRRET
+      data_type: STRING
+      description: 'Source: PRMOVRRET (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: PRMOVPROP
+      data_type: STRING
+      description: 'Source: PRMOVPROP (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCE
+      data_type: STRING
+      description: 'Source: ENERGYSOURCE (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCEPROP
+      data_type: STRING
+      description: 'Source: ENERGYSOURCEPROP (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: ENERGYSOURCERET
+      data_type: STRING
+      description: 'Source: ENERGYSOURCERET (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: DUCTBURNERS
+      data_type: STRING
+      description: 'Source: DUCTBURNERS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: BYPASSHRSG
+      data_type: STRING
+      description: 'Source: BYPASSHRSG (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: SYNCTOTRANSGRID
+      data_type: STRING
+      description: 'Source: SYNCTOTRANSGRID (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: ASSC_CHPS
+      data_type: STRING
+      description: 'Source: ASSC_CHPS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: TOPORBOT
+      data_type: STRING
+      description: 'Source: TOPORBOT (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: SOLFUELGASSYS
+      data_type: STRING
+      description: 'Source: SOLFUELGASSYS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: NO_TURB_BUOY
+      data_type: STRING
+      description: 'Source: NO_TURB_BUOY (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CCT
+      data_type: STRING
+      description: 'Source: CCT (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: TIMECOLDTOFULL
+      data_type: STRING
+      description: 'Source: TIMECOLDTOFULL (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: FLUIDBED
+      data_type: STRING
+      description: 'Source: FLUIDBED (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: STOKER
+      data_type: STRING
+      description: 'Source: STOKER (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: PULVCOAL
+      data_type: STRING
+      description: 'Source: PULVCOAL (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: OTHCOMBUST
+      data_type: STRING
+      description: 'Source: OTHCOMBUST (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: SUBCRITTECH
+      data_type: STRING
+      description: 'Source: SUBCRITTECH (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: SUPCRITTECH
+      data_type: STRING
+      description: 'Source: SUPCRITTECH (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: ULTSUPCRITTECH
+      data_type: STRING
+      description: 'Source: ULTSUPCRITTECH (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: MULTIFUELS
+      data_type: STRING
+      description: 'Source: MULTIFUELS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: COFIREFUELS
+      data_type: STRING
+      description: 'Source: COFIREFUELS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: SWITCHOILGAS
+      data_type: STRING
+      description: 'Source: SWITCHOILGAS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: OTHPROPMODS
+      data_type: STRING
+      description: 'Source: OTHPROPMODS (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: UPRATEDERATECOMP
+      data_type: STRING
+      description: 'Source: UPRATEDERATECOMP (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: OTHMODDATE
+      data_type: TIMESTAMP
+      description: 'Source: OTHMODDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: UPRATEDERATEDATE
+      data_type: TIMESTAMP
+      description: 'Source: UPRATEDERATEDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PROPUPRATEDATE
+      data_type: TIMESTAMP
+      description: 'Source: PROPUPRATEDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PROPDERATEDATE
+      data_type: TIMESTAMP
+      description: 'Source: PROPDERATEDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PROPREPOWDATE
+      data_type: TIMESTAMP
+      description: 'Source: PROPREPOWDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PROPOPERDATE
+      data_type: TIMESTAMP
+      description: 'Source: PROPOPERDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PROPRETDATE
+      data_type: TIMESTAMP
+      description: 'Source: PROPRETDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: STARTDATE
+      data_type: TIMESTAMP
+      description: 'Source: STARTDATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: PLANTID
+      data_type: STRING
+      description: 'Source: PLANTID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricPricingNodes
+    description: 'Layer: ElectricPricingNodes (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricPricingNodes/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricPricingNodes/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NODE_NAME
+      data_type: STRING
+      description: 'Source: NODE_NAME (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
+  - name: ElectricSubstations
+    description: 'Layer: ElectricSubstations (Point)'
+    external:
+      location: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricSubstations/data_drop=*/data.geojsonl
+      options:
+        format: JSON
+        hive_partition_uri_prefix: gs://siteselect-dbt/staged/rextag_unitedstates_power_and_renewables/ElectricSubstations/
+        json_extension: GEOJSON
+    columns:
+    - name: geometry
+      data_type: GEOGRAPHY
+      description: 'Source: geometry (Point)'
+      config:
+        meta:
+          rename: null
+    - name: NAME
+      data_type: STRING
+      description: 'Source: NAME (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: SUB_OPER
+      data_type: STRING
+      description: 'Source: SUB_OPER (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OPERATOR
+      data_type: STRING
+      description: 'Source: OPERATOR (str:150)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER
+      data_type: STRING
+      description: 'Source: OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: STATUS
+      data_type: STRING
+      description: 'Source: STATUS (str:25)'
+      config:
+        meta:
+          rename: null
+    - name: TYPE
+      data_type: STRING
+      description: 'Source: TYPE (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: MIN_KV
+      data_type: FLOAT64
+      description: 'Source: MIN_KV (float)'
+      config:
+        meta:
+          rename: null
+    - name: KV_MAX
+      data_type: FLOAT64
+      description: 'Source: KV_MAX (float)'
+      config:
+        meta:
+          rename: null
+    - name: CIRCUITS
+      data_type: STRING
+      description: 'Source: CIRCUITS (int32)'
+      config:
+        meta:
+          rename: null
+    - name: CIRBREAKERS
+      data_type: STRING
+      description: 'Source: CIRBREAKERS (int16)'
+      config:
+        meta:
+          rename: null
+    - name: TRANSFORMERS
+      data_type: STRING
+      description: 'Source: TRANSFORMERS (int16)'
+      config:
+        meta:
+          rename: null
+    - name: CONFIG
+      data_type: STRING
+      description: 'Source: CONFIG (str:35)'
+      config:
+        meta:
+          rename: null
+    - name: IN_EXPAN
+      data_type: FLOAT64
+      description: 'Source: IN_EXPAN (float)'
+      config:
+        meta:
+          rename: null
+    - name: OUT_EXPAN
+      data_type: STRING
+      description: 'Source: OUT_EXPAN (str:5)'
+      config:
+        meta:
+          rename: null
+    - name: ISO_RTO_NM
+      data_type: STRING
+      description: 'Source: ISO_RTO_NM (str:50)'
+      config:
+        meta:
+          rename: null
+    - name: PRICINGZONE
+      data_type: STRING
+      description: 'Source: PRICINGZONE (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: NERCREGION
+      data_type: STRING
+      description: 'Source: NERCREGION (str:80)'
+      config:
+        meta:
+          rename: null
+    - name: BALANCINGAUTH
+      data_type: STRING
+      description: 'Source: BALANCINGAUTH (str:100)'
+      config:
+        meta:
+          rename: null
+    - name: PREV_OWNER
+      data_type: STRING
+      description: 'Source: PREV_OWNER (str:200)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_DATE
+      data_type: TIMESTAMP
+      description: 'Source: TRANS_DATE (datetime)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_NOTE
+      data_type: STRING
+      description: 'Source: TRANS_NOTE (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: TRANS_ID
+      data_type: STRING
+      description: 'Source: TRANS_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: UTILITYID
+      data_type: STRING
+      description: 'Source: UTILITYID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: LOC_ID
+      data_type: STRING
+      description: 'Source: LOC_ID (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: SUBOPER_ID
+      data_type: STRING
+      description: 'Source: SUBOPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_ID
+      data_type: STRING
+      description: 'Source: OPER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OPER_URL
+      data_type: STRING
+      description: 'Source: OPER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_ID
+      data_type: STRING
+      description: 'Source: OWNER_ID (str:10)'
+      config:
+        meta:
+          rename: null
+    - name: OWNER_URL
+      data_type: STRING
+      description: 'Source: OWNER_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CONTACTS_URL
+      data_type: STRING
+      description: 'Source: CONTACTS_URL (str:254)'
+      config:
+        meta:
+          rename: null
+    - name: CATCHALL
+      data_type: STRING
+      description: 'Source: CATCHALL (str:500)'
+      config:
+        meta:
+          rename: null
+    - name: NOTES
+      data_type: STRING
+      description: 'Source: NOTES (str:300)'
+      config:
+        meta:
+          rename: null
+    - name: CNTY_NAME
+      data_type: STRING
+      description: 'Source: CNTY_NAME (str:60)'
+      config:
+        meta:
+          rename: null
+    - name: STATE_NAME
+      data_type: STRING
+      description: 'Source: STATE_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: CNTRY_NAME
+      data_type: STRING
+      description: 'Source: CNTRY_NAME (str:40)'
+      config:
+        meta:
+          rename: null
+    - name: SQFEET
+      data_type: FLOAT64
+      description: 'Source: SQFEET (float)'
+      config:
+        meta:
+          rename: null
+    - name: UPDATE_NO
+      data_type: STRING
+      description: 'Source: UPDATE_NO (str:4)'
+      config:
+        meta:
+          rename: null
+    - name: QUALITY
+      data_type: STRING
+      description: 'Source: QUALITY (str:20)'
+      config:
+        meta:
+          rename: null
+    - name: _loaded_at
+      data_type: TIMESTAMP
+    - name: _source_file
+      data_type: STRING
+    - name: _layer_name
+      data_type: STRING
