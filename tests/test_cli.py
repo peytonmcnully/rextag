@@ -12,17 +12,15 @@ from rextag.cli import main
 def config_file(tmp_path):
     config = {
         "gcs": {
-            "source_bucket": "test-source",
             "staging_bucket": "test-staging",
-            "staging_prefix": "rextag/staging/",
+            "staging_prefix": "staged/",
         },
-        "bigquery": {
-            "project": "test-project",
-            "staging_dataset": "rextag_staging",
-            "target_dataset": "rextag",
+        "scan": {
+            "source_prefix": "gs://test-source/rextagsource/data_drop=2026-01/",
+            "dbt_output_dir": "dbt_project/models/staging/",
         },
         "sources": [
-            {"name": "parcels", "uri": "gs://test-source/parcels.gdb.zip"},
+            {"name": "parcels", "uri": "gs://test-source/rextagsource/data_drop=2026-01/parcels.zip"},
         ],
     }
     path = tmp_path / "config.yml"
@@ -30,12 +28,17 @@ def config_file(tmp_path):
     return path
 
 
-class TestCli:
+class TestCliHelp:
     def test_help(self):
         runner = CliRunner()
         result = runner.invoke(main, ["--help"])
         assert result.exit_code == 0
-        assert "rextag" in result.output.lower() or "extract" in result.output.lower()
+
+    def test_scan_help(self):
+        runner = CliRunner()
+        result = runner.invoke(main, ["scan", "--help"])
+        assert result.exit_code == 0
+        assert "--prefix" in result.output
 
     def test_extract_help(self):
         runner = CliRunner()
@@ -49,6 +52,23 @@ class TestCli:
         assert result.exit_code == 0
         assert "--source" in result.output
 
+
+class TestScanCommand:
+    @patch("rextag.cli.run_scan")
+    def test_scan_calls_run_scan(self, mock_run):
+        runner = CliRunner()
+        result = runner.invoke(main, [
+            "scan",
+            "--prefix", "gs://bucket/path/data_drop=2026-01/",
+            "--output-dir", "/tmp/output",
+            "--staging-bucket", "my-bucket",
+            "--staging-prefix", "staged/",
+        ])
+        assert result.exit_code == 0
+        mock_run.assert_called_once()
+
+
+class TestExtractCommand:
     @patch("rextag.cli.run_extract")
     def test_extract_calls_run_extract(self, mock_run, config_file):
         runner = CliRunner()
@@ -56,6 +76,8 @@ class TestCli:
         assert result.exit_code == 0
         mock_run.assert_called_once()
 
+
+class TestListCommand:
     @patch("rextag.cli.run_list")
     def test_list_calls_run_list(self, mock_run):
         runner = CliRunner()
