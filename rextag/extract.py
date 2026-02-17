@@ -117,7 +117,10 @@ def extract_layer_to_jsonl(
     count = 0
 
     with fiona.open(gdb_path, layer=layer_name) as collection:
-        crs = collection.crs.get("init", "EPSG:4326") if isinstance(collection.crs, dict) else str(collection.crs)
+        if has_geometry(collection.schema):
+            crs = collection.crs.get("init", "EPSG:4326") if isinstance(collection.crs, dict) else str(collection.crs)
+        else:
+            crs = "EPSG:4326"  # No geometry — skip reprojection
         lines = convert_features(collection, crs=crs, source_file=source_file, layer_name=layer_name)
 
         with open(output_path, "w") as f:
