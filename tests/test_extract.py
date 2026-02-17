@@ -1,6 +1,5 @@
 """Tests for rextag.extract."""
 
-import json
 import zipfile
 from pathlib import Path
 from unittest.mock import MagicMock, patch
@@ -10,7 +9,6 @@ from rextag.extract import (
     download_from_gcs,
     unzip_geodatabase,
     list_layers,
-    extract_layer_to_jsonl,
 )
 
 

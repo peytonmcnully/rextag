@@ -1,9 +1,7 @@
 """Tests for rextag.load."""
 
-from pathlib import Path
-from unittest.mock import MagicMock, patch, call
+from unittest.mock import MagicMock, patch
 
-import pytest
 from rextag.load import upload_to_gcs, load_jsonl_to_bigquery
 
 

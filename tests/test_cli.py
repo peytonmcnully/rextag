@@ -1,8 +1,7 @@
 """Tests for rextag.cli."""
 
 import yaml
-from pathlib import Path
-from unittest.mock import patch, MagicMock
+from unittest.mock import patch
 from click.testing import CliRunner
 
 import pytest

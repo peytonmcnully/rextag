@@ -2,7 +2,6 @@
 
 import pytest
 import yaml
-from pathlib import Path
 from rextag.config import PipelineConfig, load_config
 
 

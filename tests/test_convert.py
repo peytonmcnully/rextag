@@ -1,7 +1,6 @@
 """Tests for rextag.convert."""
 
 import json
-import pytest
 from rextag.convert import feature_to_row, convert_features, needs_reprojection, reproject_geometry
 
 

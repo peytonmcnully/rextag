@@ -1,7 +1,5 @@
 """Tests for rextag.schema."""
 
-import pytest
-from google.cloud.bigquery import SchemaField
 from rextag.schema import fiona_type_to_bq, build_bq_schema
 
 
