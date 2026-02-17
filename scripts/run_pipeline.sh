@@ -8,16 +8,17 @@ cd "$PROJECT_DIR"
 
 echo "=== rextag pipeline ==="
 
-# Step 1: Extract geodatabases to BigQuery staging
+# Step 1: Extract geodatabases to hive-partitioned GCS paths
 echo ""
 echo "--- Extract ---"
 rextag extract --config config.yml
 
-# Step 2: Run dbt transformations
+# Step 2: Create/refresh external tables and run dbt transformations
 echo ""
 echo "--- Transform ---"
 cd dbt_project
 dbt deps
+dbt run-operation stage_external_sources
 dbt run
 
 # Step 3: Run dbt tests
