@@ -18,37 +18,44 @@ class SourceConfig:
 class PipelineConfig:
     """Full pipeline configuration."""
 
-    gcs_source_bucket: str
     gcs_staging_bucket: str
     gcs_staging_prefix: str
-    bq_project: str
-    bq_staging_dataset: str
-    bq_target_dataset: str
     sources: list[SourceConfig]
+    scan_source_prefix: str | None = None
+    scan_dbt_output_dir: str | None = None
 
     @classmethod
     def from_dict(cls, data: dict) -> "PipelineConfig":
         gcs = data["gcs"]
-        bq = data["bigquery"]
-        sources = [SourceConfig(**s) for s in data["sources"]]
+        sources = [SourceConfig(**s) for s in data.get("sources", [])]
+
+        scan = data.get("scan", {})
+
         return cls(
-            gcs_source_bucket=gcs["source_bucket"],
             gcs_staging_bucket=gcs["staging_bucket"],
             gcs_staging_prefix=gcs["staging_prefix"],
-            bq_project=bq["project"],
-            bq_staging_dataset=bq["staging_dataset"],
-            bq_target_dataset=bq["target_dataset"],
             sources=sources,
+            scan_source_prefix=scan.get("source_prefix"),
+            scan_dbt_output_dir=scan.get("dbt_output_dir"),
+        )
+
+    def hive_staging_path(
+        self, dataset_name: str, layer_name: str, data_drop: str, extension: str
+    ) -> str:
+        """GCS URI for a hive-partitioned staging file.
+
+        Returns: gs://bucket/prefix/dataset/layer/data_drop=VALUE/data.EXT
+        """
+        prefix = self.gcs_staging_prefix.rstrip("/")
+        return (
+            f"gs://{self.gcs_staging_bucket}/{prefix}/"
+            f"{dataset_name}/{layer_name}/data_drop={data_drop}/data.{extension}"
         )
 
     def staging_gcs_path(self, dataset_name: str, layer_name: str) -> str:
-        """GCS URI for a staging JSONL file."""
+        """GCS URI for a staging JSONL file (legacy flat layout)."""
         prefix = self.gcs_staging_prefix.rstrip("/")
         return f"gs://{self.gcs_staging_bucket}/{prefix}/{dataset_name}/{layer_name}.jsonl"
-
-    def staging_table_id(self, dataset_name: str, layer_name: str) -> str:
-        """Fully-qualified BigQuery table ID for a staging table."""
-        return f"{self.bq_project}.{self.bq_staging_dataset}.{dataset_name}_{layer_name}"
 
 
 def load_config(path: Path) -> PipelineConfig:

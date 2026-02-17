@@ -9,18 +9,16 @@ from rextag.config import PipelineConfig, load_config
 def config_dict():
     return {
         "gcs": {
-            "source_bucket": "test-source",
             "staging_bucket": "test-staging",
-            "staging_prefix": "rextag/staging/",
+            "staging_prefix": "staged/",
         },
-        "bigquery": {
-            "project": "test-project",
-            "staging_dataset": "rextag_staging",
-            "target_dataset": "rextag",
+        "scan": {
+            "source_prefix": "gs://test-source/rextagsource/data_drop=2026-01/",
+            "dbt_output_dir": "dbt_project/models/staging/",
         },
         "sources": [
-            {"name": "parcels", "uri": "gs://test-source/parcels.gdb.zip"},
-            {"name": "zoning", "uri": "gs://test-source/zoning.gdb.zip"},
+            {"name": "parcels", "uri": "gs://test-source/rextagsource/data_drop=2026-01/parcels.zip"},
+            {"name": "zoning", "uri": "gs://test-source/rextagsource/data_drop=2026-01/zoning.zip"},
         ],
     }
 
@@ -35,31 +33,45 @@ def config_file(tmp_path, config_dict):
 class TestPipelineConfig:
     def test_from_dict(self, config_dict):
         config = PipelineConfig.from_dict(config_dict)
-        assert config.gcs_source_bucket == "test-source"
         assert config.gcs_staging_bucket == "test-staging"
-        assert config.gcs_staging_prefix == "rextag/staging/"
-        assert config.bq_project == "test-project"
-        assert config.bq_staging_dataset == "rextag_staging"
-        assert config.bq_target_dataset == "rextag"
+        assert config.gcs_staging_prefix == "staged/"
+        assert config.scan_source_prefix == "gs://test-source/rextagsource/data_drop=2026-01/"
+        assert config.scan_dbt_output_dir == "dbt_project/models/staging/"
         assert len(config.sources) == 2
         assert config.sources[0].name == "parcels"
-        assert config.sources[0].uri == "gs://test-source/parcels.gdb.zip"
 
-    def test_staging_gcs_path(self, config_dict):
+    def test_hive_staging_path(self, config_dict):
         config = PipelineConfig.from_dict(config_dict)
-        path = config.staging_gcs_path("parcels", "boundaries")
-        assert path == "gs://test-staging/rextag/staging/parcels/boundaries.jsonl"
+        path = config.hive_staging_path("parcels", "boundaries", "2026-01", "geojsonl")
+        assert path == "gs://test-staging/staged/parcels/boundaries/data_drop=2026-01/data.geojsonl"
 
-    def test_staging_table_id(self, config_dict):
+    def test_hive_staging_path_jsonl(self, config_dict):
         config = PipelineConfig.from_dict(config_dict)
-        table_id = config.staging_table_id("parcels", "boundaries")
-        assert table_id == "test-project.rextag_staging.parcels_boundaries"
+        path = config.hive_staging_path("parcels", "owners", "2026-01", "jsonl")
+        assert path == "gs://test-staging/staged/parcels/owners/data_drop=2026-01/data.jsonl"
+
+
+class TestPipelineConfigV2:
+    def test_backward_compat_without_scan(self):
+        data = {
+            "gcs": {
+                "staging_bucket": "test-staging",
+                "staging_prefix": "rextag/staging/",
+            },
+            "sources": [
+                {"name": "parcels", "uri": "gs://test-source/parcels.gdb.zip"},
+            ],
+        }
+        config = PipelineConfig.from_dict(data)
+        assert config.scan_source_prefix is None
+        assert config.scan_dbt_output_dir is None
+        assert config.gcs_staging_bucket == "test-staging"
 
 
 class TestLoadConfig:
     def test_load_from_file(self, config_file):
         config = load_config(config_file)
-        assert config.gcs_source_bucket == "test-source"
+        assert config.gcs_staging_bucket == "test-staging"
         assert len(config.sources) == 2
 
     def test_load_missing_file(self, tmp_path):
