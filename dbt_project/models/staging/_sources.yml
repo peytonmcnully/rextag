@@ -1,0 +1,10 @@
+version: 2
+
+sources:
+  - name: raw_geodata
+    description: "Raw geodatabase data loaded by rextag extraction pipeline"
+    database: "{{ var('bq_project', 'my-gcp-project') }}"
+    schema: "{{ var('staging_dataset', 'rextag_staging') }}"
+    # Tables are added here as new geodatabases are onboarded.
+    # Each table follows the naming convention: {source_name}_{layer_name}
+    tables: []

@@ -1,0 +1,4 @@
+version: 2
+
+models: []
+# Mart models are added as business transformations are defined.

@@ -1,0 +1,13 @@
+version: 2
+
+models: []
+# Staging models are added as new geodatabases are onboarded.
+# Each follows the pattern:
+#
+# - name: stg_{source}_{layer}
+#   description: "Cleaned {layer} data from {source} geodatabase"
+#   columns:
+#     - name: geom
+#       description: "Geometry as GEOGRAPHY type"
+#       tests:
+#         - not_null
